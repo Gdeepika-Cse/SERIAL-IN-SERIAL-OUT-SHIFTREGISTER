@@ -1,4 +1,4 @@
-# EXPERIMENT 6 : IMPLEMENTATION OF SERIAL IN SERIAL OUT SHIFTREGISTER
+# EXPERIMENT 10 : IMPLEMENTATION OF SERIAL IN SERIAL OUT SHIFTREGISTER
 # NAME.- DEEPIKA.G
 # REG NO.- 212224040060
 
@@ -40,22 +40,27 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
   
 # PROGRAM
 
-![Screenshot 2024-12-22 114654](https://github.com/user-attachments/assets/6dd14cdd-bf7c-400b-ace9-b10ee9b32558)
-
-
-
+module ex10(clk,sin,q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0]<=sin;
+q[1]<=q[0];
+q[2]<=q[1];
+q[3]<=q[2];
+end
+endmodule
 
 # RTL LOGIC FOR SISO Shift Register
 
-![Screenshot 2024-12-22 114718](https://github.com/user-attachments/assets/1f6352f1-b2d2-4e82-86f3-f19c96d570cb)
-
+![Screenshot 2025-05-13 201711](https://github.com/user-attachments/assets/1cda7033-7da0-4973-a286-974512f0cc79)
 
 # TIMING DIGRAMS FOR SISO Shift Register
 
-![WhatsApp Image 2025-01-06 at 21 17 25_ab56467c](https://github.com/user-attachments/assets/20b614e7-15d3-4288-9397-175b29b7400a)
-
-
-
+![Screenshot 2025-05-13 201656](https://github.com/user-attachments/assets/ef11f87b-cdd1-48cd-847b-27727653548c)
 
 # RESULT
 The implementation of the SISO shift register in Verilog and validating their functionality was executed successfully.
